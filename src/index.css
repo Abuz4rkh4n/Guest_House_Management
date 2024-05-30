@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form_input {
+  @apply rounded-md p-1 border focus:outline-none focus:border-blue-400;
+}
+
+.scrollbar-transparent {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: black; /* For Firefox */
+}
+
+.scrollbar-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-transparent::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 3px solid transparent;
+}
