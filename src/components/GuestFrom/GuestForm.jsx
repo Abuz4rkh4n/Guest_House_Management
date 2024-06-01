@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../../index.css";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const GuestForm = () => {
+const GuestForm = ({ addData }) => {
   const [newGuest, setNewGuest] = useState({
     name: "",
     cnic_id: "",
@@ -13,6 +13,7 @@ const GuestForm = () => {
     items_price: "",
     days_staying: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,12 +21,14 @@ const GuestForm = () => {
       ...newGuest,
       [name]: value,
     });
+    addData(newGuest);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:3036/addguest", newGuest)
+      .then(navigate("/invoice"))
       .then((res) => {
         console.log(res.data);
         setNewGuest({
@@ -37,7 +40,6 @@ const GuestForm = () => {
           item_price: "",
           days_staying: "",
         });
-        Navigate("/");
       })
       .catch((err) => {
         console.error(
@@ -48,8 +50,8 @@ const GuestForm = () => {
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center bg-custom-white rounded-md w-30vw py-12">
+    <div className="w-full h-screen flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center bg-custom-white rounded-md w-[500px] py-12">
         <h1 className=" font-Outfit text-2rem mb-10">GUEST DETAILS</h1>
         <form onSubmit={handleSubmit} className="flex flex-col font-Outfit">
           <div className="w-90 m-2  flex items-center justify-between">
@@ -136,7 +138,7 @@ const GuestForm = () => {
           </div>
           <button
             type="submit"
-            className="bg-button-yellow rounded-md p-1 mt-8"
+            className="bg-button-yellow rounded-md p-1 mt-8 text-center"
           >
             Add
           </button>

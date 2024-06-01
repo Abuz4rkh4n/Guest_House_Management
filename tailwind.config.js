@@ -13,6 +13,8 @@ export default {
         "text-grey": "#36454F",
         "button-yellow": "#FFE145",
         "custom-white": "#FDFCFA",
+        "button-purple": "#9556CB",
+        "button-orange": "#FF7C36"
       },
       fontSize: {
         "2.5-rem": "3.5rem",

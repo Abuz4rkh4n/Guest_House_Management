@@ -1,9 +1,10 @@
 import React from "react";
+import DateFormat from "./DateFormat/DateFormat";
 
 const GuestList = ({ guestList }) => {
   return (
     <div>
-      <table className="font-Outfit border-separate border-spacing-2 border-spacing-x-12">
+      <table className="font-Outfit border-separate border-spacing-y-[15px] border-spacing-x-[20px]">
         <thead className="text-xl">
           <tr>
             <th>Guest ID</th>
@@ -21,8 +22,12 @@ const GuestList = ({ guestList }) => {
                 <td>{data.guest_id}</td>
                 <td>{data.name}</td>
                 <td>{data.cnic_id}</td>
-                <td>{data.check_in_date}</td>
-                <td>{data.check_out_date}</td>
+                <td>
+                  <DateFormat date={data.check_in_date} />
+                </td>
+                <td>
+                  <DateFormat date={data.check_out_date} />
+                </td>
                 <td>{data.total_amount}</td>
               </tr>
             );

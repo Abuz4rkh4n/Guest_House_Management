@@ -55,14 +55,17 @@ const Home = ({ guestsList, rooms }) => {
             </div>
           ))}
         </div>
-        <div className=" bg-custom-white w-65vw rounded-md h-[33vh] p-4 overflow-y-scroll overflow-x-hidden scrollbar-transparent">
+        <div className=" bg-custom-white w-65vw rounded-md h-[67vh] p-4 overflow-y-scroll overflow-x-hidden scrollbar-transparent">
           <div className="flex justify-start items-center mb-2">
             <h1 className=" font-Outfit text-2.5-rem">GUEST INFO</h1>
             <Link
               to={"/addguest"}
-              className=" flex items-center justify-center w-40 h-9 bg-button-yellow rounded-md font-Outfit text-lg font-medium ml-20"
+              className=" flex items-center justify-center h-9 bg-button-yellow rounded-md font-Outfit text-lg font-medium ml-20 px-4"
             >
               Add New Guest +
+            </Link>
+            <Link className=" flex items-center justify-center h-9 bg-button-purple rounded-md font-Outfit text-lg font-medium ml-4 px-4">
+              Update Guest Info
             </Link>
           </div>
           <div>
