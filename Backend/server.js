@@ -84,6 +84,10 @@ app.post("/addguest", (req, res) => {
   );
 });
 
+// Update Guest Info 
+
+app.put("/guest")
+
 app.listen(3036, () => {
   console.log("listening");
 });

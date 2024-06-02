@@ -14,7 +14,8 @@ export default {
         "button-yellow": "#FFE145",
         "custom-white": "#FDFCFA",
         "button-purple": "#9556CB",
-        "button-orange": "#FF7C36"
+        "button-orange": "#FF7C36",
+        "button-red": "#ff0000"
       },
       fontSize: {
         "2.5-rem": "3.5rem",

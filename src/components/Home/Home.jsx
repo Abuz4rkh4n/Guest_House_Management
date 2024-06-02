@@ -64,7 +64,10 @@ const Home = ({ guestsList, rooms }) => {
             >
               Add New Guest +
             </Link>
-            <Link className=" flex items-center justify-center h-9 bg-button-purple rounded-md font-Outfit text-lg font-medium ml-4 px-4">
+            <Link
+              to={"/editguestinfo"}
+              className=" flex items-center justify-center h-9 bg-button-purple rounded-md font-Outfit text-lg font-medium ml-4 px-4"
+            >
               Update Guest Info
             </Link>
           </div>
